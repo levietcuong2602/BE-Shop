@@ -103,3 +103,4 @@ typings/
 
 # Except
 !docker/.env
+/data
