@@ -1,0 +1,6 @@
+const TRADEMARKED_STATUS = {
+  ACTIVE: 'ACTIVE',
+  DEACTIVE: 'DEACTIVE',
+};
+
+module.exports = { TRADEMARKED_STATUS };
