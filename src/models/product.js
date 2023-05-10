@@ -24,6 +24,8 @@ const productSchema = new mongoose.Schema(
       enum: Object.values(PRODUCT_STATUS),
       default: PRODUCT_STATUS.ACTIVE,
     },
+    avatarUrl: String,
+    thumbnailUrls: [String],
   },
   {
     timestamps: true,

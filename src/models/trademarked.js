@@ -6,6 +6,7 @@ const trademarkedSchema = new mongoose.Schema(
   {
     trademarkedId: String,
     name: String,
+    avatarUrl: String,
     status: {
       type: String,
       enum: Object.values(TRADEMARKED_STATUS),
