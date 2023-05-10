@@ -19,4 +19,4 @@ const trademarkedSchema = new mongoose.Schema(
   },
 );
 
-module.exports = mongoose.model('Category', trademarkedSchema);
+module.exports = mongoose.model('Trademarked', trademarkedSchema);
