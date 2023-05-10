@@ -1,5 +1,7 @@
 const categoryDao = require('../daos/category');
+
 const CustomError = require('../errors/customError');
+
 const errorCodes = require('../errors/code');
 
 const createCategory = async ({ name }) => {
