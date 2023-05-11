@@ -3,6 +3,7 @@ const { CATEGORY_STATUS } = require('./category');
 const { NATIVE_STATUS } = require('./native');
 const { TRADEMARKED_STATUS } = require('./trademarked');
 const { ADMIN_STATUS } = require('./admin');
+const { MENU_STATUS } = require('./menu');
 
 const TIME = {
   A_WEEK: 7 * 86400 * 1000,
@@ -15,4 +16,5 @@ module.exports = {
   NATIVE_STATUS,
   TRADEMARKED_STATUS,
   ADMIN_STATUS,
+  MENU_STATUS,
 };

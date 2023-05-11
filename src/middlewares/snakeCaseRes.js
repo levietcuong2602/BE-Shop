@@ -48,8 +48,9 @@ const snakecaseRes = () =>
     snakecaseKeys(transformObjectId(body), {
       deep: true,
       exclude: [
-        '*',
-        '#',
+        'zh_CN',
+        'en_US',
+        'vi_VN',
         /([0-9]{1,4}-[0-9]{1,4}-[0-9]{1,4})|([0-9]{1,4}:[0-9]{1,4})/,
       ],
     }),
