@@ -22,8 +22,8 @@ const generateAccessToken = async (adminId) => {
   return accessToken;
 };
 
-const login = async (email, password) => {
-  const admin = await adminDao.findAdmin({ email });
+const login = async (username, password) => {
+  const admin = await adminDao.findAdmin({ username });
   if (!admin) throw new CustomError(errorCodes.NOT_FOUND, 'Admin not found');
 
   const isCorrectPassword = await comparePassword(password, admin.password);
@@ -50,15 +50,15 @@ const verifyAccessToken = async (accessToken) => {
   }
 };
 
-const register = async ({ email, password }) => {
-  let admin = await adminDao.findAdmin({ email });
+const register = async ({ username, password, fullName }) => {
+  let admin = await adminDao.findAdmin({ username });
   if (admin) throw new CustomError(errorCodes.ADMIN_EXIST);
 
-  const salt = generateSalt();
+  const salt = generateSalt(10);
   password = password || generateId(16);
   password = await encryptPassword(password, salt);
 
-  admin = await adminDao.createAdmin({ email, password });
+  admin = await adminDao.createAdmin({ username, password, fullName });
   return admin;
 };
 
