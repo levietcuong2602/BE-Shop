@@ -32,12 +32,14 @@ const encryptPassword = async (password, salt) => {
 
   // Encrypt the resulting bcrypt hash with AES256
   const encryptAES256 = encrypt(hashedBcrypt);
-
-  const encryptedPassword = encryptAES256;
-  return encryptedPassword;
+  return encryptAES256;
 };
 
 const comparePassword = async (newPassWord, oldPassword) => {
+  console.log({
+    newPassWord: hashSHA512(newPassWord),
+    oldPassword: decrypt(oldPassword),
+  });
   const isCorrectPassword = await compareBcrypt(
     hashSHA512(newPassWord),
     decrypt(oldPassword),

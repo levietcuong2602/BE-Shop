@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const authController = require('../controllers/auth');
 const asyncMiddleware = require('../middlewares/async');
-const { loginValidate } = require('../validations/auth');
+const { loginValidate, registerValidate } = require('../validations/auth');
 
 /* eslint-disable prettier/prettier */
 /**
@@ -48,6 +48,12 @@ router.post(
   '/auths/login',
   loginValidate,
   asyncMiddleware(authController.login),
+);
+
+router.post(
+  '/auths/register',
+  registerValidate,
+  asyncMiddleware(authController.register),
 );
 
 /**
